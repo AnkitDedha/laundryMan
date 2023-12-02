@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/laundry_management # Replace with your database URL
+    username: postgres  # Replace with your database username
+    password: xirtaM  # Replace with your database password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update # Use 'create' for initial setup, then switch to 'update'
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+server:
+  port: 8090 # You can change the port if needed
+
+# Additional configurations (like security, logging, etc.) can be added here as needed
