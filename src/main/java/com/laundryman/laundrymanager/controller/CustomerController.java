@@ -65,6 +65,9 @@ public class CustomerController {
         Customer customer = new Customer();
         // Map fields from CustomerDTO to Customer
         customer.setName(dto.getName());
+        customer.setEmail(dto.getEmail());
+        customer.setPhoneNumber(dto.getPhoneNumber());
+        customer.setAddress(dto.getAddress());
         // Add other field mappings as necessary
         return customer;
     }
@@ -73,12 +76,15 @@ public class CustomerController {
     private CustomerDTO convertToDTO(Customer customer) {
         CustomerDTO dto = new CustomerDTO();
         // Map fields from Customer to CustomerDTO
-        dto.setEmail(customer.getEmail());
-        dto.setAddress(customer.getAddress());
-        dto.setPhoneNumber(customer.getPhoneNumber());
-        dto.setId(customer.getId());
         dto.setName(customer.getName());
-        // Add other field mappings as necessary
+        dto.setEmail(customer.getEmail());
+        dto.setPhoneNumber(customer.getPhoneNumber());
+        dto.setAddress(customer.getAddress());
+
+        // Optional: Convert Set<Order> to a suitable format for DTO, if necessary
+        // This depends on how you want to represent orders in CustomerDTO
+        // Example: dto.setOrderIds(customer.getOrders().stream().map(Order::getId).collect(Collectors.toSet()));
+
         return dto;
     }
 }

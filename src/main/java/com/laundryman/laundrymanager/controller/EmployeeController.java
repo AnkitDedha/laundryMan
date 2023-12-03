@@ -63,21 +63,36 @@ public class EmployeeController {
     // Utility method to convert DTO to entity
     private Employee convertToEntity(EmployeeDTO dto) {
         Employee employee = new Employee();
+
         // Map fields from EmployeeDTO to Employee
         employee.setFirstName(dto.getFirstName());
         employee.setLastName(dto.getLastName());
+        employee.setEmail(dto.getEmail());
+        employee.setPhoneNumber(dto.getPhoneNumber());
+        employee.setHireDate(dto.getHireDate());
+        employee.setPosition(dto.getPosition());
+
         // Add other field mappings as necessary
+
         return employee;
     }
 
     // Utility method to convert entity to DTO
     private EmployeeDTO convertToDTO(Employee employee) {
         EmployeeDTO dto = new EmployeeDTO();
+
         // Map fields from Employee to EmployeeDTO
         dto.setId(employee.getId());
-        employee.setFirstName(dto.getFirstName());
-        employee.setLastName(dto.getLastName());
+        dto.setFirstName(employee.getFirstName());
+        dto.setLastName(employee.getLastName());
+        dto.setEmail(employee.getEmail());
+        dto.setPhoneNumber(employee.getPhoneNumber());
+        dto.setHireDate(employee.getHireDate());
+        dto.setPosition(employee.getPosition());
+
         // Add other field mappings as necessary
+
         return dto;
     }
+
 }

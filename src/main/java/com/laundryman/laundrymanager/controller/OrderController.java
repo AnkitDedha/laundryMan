@@ -63,19 +63,27 @@ public class OrderController {
     // Utility method to convert DTO to entity
     private Order convertToEntity(OrderDTO dto) {
         Order order = new Order();
+
         // Map fields from OrderDTO to Order
+        order.setOrderDate(dto.getOrderDate());
+        order.setStatus(dto.getStatus());
         order.setDescription(dto.getDescription());
         // Add other field mappings as necessary
+
         return order;
     }
 
     // Utility method to convert entity to DTO
     private OrderDTO convertToDTO(Order order) {
         OrderDTO dto = new OrderDTO();
+
         // Map fields from Order to OrderDTO
-        dto.setId(order.getId());
+        dto.setOrderDate(order.getOrderDate());
+        dto.setStatus(order.getStatus());
         dto.setDescription(order.getDescription());
+
         // Add other field mappings as necessary
+
         return dto;
     }
 }
